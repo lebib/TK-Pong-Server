@@ -7,6 +7,11 @@ type Direction struct {
     A, Speed float64
 }
 
+type Vector struct {
+    Point
+    Direction
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 func ApplyTranslation(point Point, dir Direction) Point {
@@ -17,5 +22,7 @@ func ApplyTranslation(point Point, dir Direction) Point {
     point.Y = point.Y + dirPoint.Y * dir.Speed
     return point
 }
+
+func ApplyBounce(vector Vector)
 
 ////////////////////////////////////////////////////////////////////////////////

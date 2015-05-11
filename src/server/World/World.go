@@ -1,1 +1,22 @@
 package World
+import "server/Geometry"
+
+////////////////////////////////////////////////////////////////////////////////
+
+type Paddle struct {
+    Geometry.Rect
+}
+
+type Ball struct {
+    Geometry.Rect
+    Geometry.Vector
+}
+
+type World struct {
+    Geometry.Rect
+    Ball
+    Paddle1 Paddle
+    Paddle2 Paddle
+}
+
+////////////////////////////////////////////////////////////////////////////////
