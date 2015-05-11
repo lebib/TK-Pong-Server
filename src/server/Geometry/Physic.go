@@ -23,6 +23,4 @@ func ApplyTranslation(point Point, dir Direction) Point {
     return point
 }
 
-func ApplyBounce(vector Vector)
-
 ////////////////////////////////////////////////////////////////////////////////

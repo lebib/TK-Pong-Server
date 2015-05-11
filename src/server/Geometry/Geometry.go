@@ -54,7 +54,7 @@ func LineCoefficient(p1, p2 Point) float64 {
 }
 
 func DegreesToRadians(degrees float64) float64 {
-
+    return math.Pi * degrees / 180
 }
 
 ////////////////////////////////////////////////////////////////////////////////
