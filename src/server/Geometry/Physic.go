@@ -23,4 +23,8 @@ func ApplyTranslation(point Point, dir Direction) Point {
     return point
 }
 
+func (v *Vector) HandleBounceOnBorder() {
+    v.Direction.angle = (-1)*v.Direction.angle
+}
+
 ////////////////////////////////////////////////////////////////////////////////

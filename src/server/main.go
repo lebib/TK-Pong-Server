@@ -6,6 +6,7 @@ import (
     "fmt"
     "math"
     "server/Geometry"
+    "server/World"
 )
 
 func main() {
@@ -27,6 +28,8 @@ func main() {
     dir := Geometry.Direction{math.Pi / 4, 0.5}
     p2 := Geometry.ApplyTranslation(Geometry.Point{3, 3}, dir)
     fmt.Println(p2.X, p2.Y)
+    paddle := World.Paddle{Geometry.Rect{Geometry.Point{0, 0}, 0, 0}}
+    fmt.Println(paddle.Rect.Point.X)
 }
 
 // func main() {
