@@ -6,6 +6,7 @@ type Rect struct {
 
 type Paddle struct {
     Rect
+    Speed float64
 }
 
 type Velocity struct {
@@ -26,12 +27,18 @@ type World struct {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-func (p *Paddle) Move(speed float64, rect Rect) {
-
+func (p *Paddle) Move(rect Rect) {
+    p.Rect.X = p.Rect.X + p.Speed
+    if p.Rect.X < 0 {
+        p.Rect.X = 0
+    } else if p.Rect.X + p.Rect.W > rect.W {
+        p.Rect.X = rect.W - p.Rect.W
+    }
 }
 
 func (b *Ball) Move(rect Rect) {
-
+    b.Rect.X += b.Velocity.X
+    b.Rect.Y += b.Velocity.Y
 }
 
 func (b *Ball) BounceEdge(width int64) {
@@ -42,17 +49,12 @@ func (b *Ball) BouncePaddle(p Paddle) {
 
 }
 
+func (b *Ball) InGoal(rect Rect) {
+    
+}
+
 func CollisionRR(r1, r2 Rect) bool {
     return false
 }
 
-// func (p *Paddle) Move(speed float64, rect Rect) {
-//     p.Rect.X = p.Rect.X + speed
-//     if p.Rect.X < 0 {
-//         p.Rect.X = 0
-//     } else if p.Rect.X + p.Rect.W > rect.W {
-//         p.Rect.X = rect.W - p.Rect.W
-//     }
-// }
-
-// ////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
